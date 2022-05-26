@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
 
 :root {
 
@@ -55,6 +56,16 @@ header {
 
 .menu {
     display: none;
+    cursor: pointer;
+}
+
+.menu__btn {
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    width: 35px;
+    height: 3px;
+    background-color: var(--white);
 }
 
 .nav {
@@ -357,12 +368,74 @@ header {
 
 
 @media screen and (max-width: 750px){
-    .nav__list {
-        display: none;
-        flex-direction: column;
+    .menu {
+        display: block;
+        margin-bottom: 7px;
     }
+
+    .menu.active .menu__btn:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu.active .menu__btn:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu.active .menu__btn:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .nav {
         padding: 2.5rem 1.5rem;
+    }
+
+    .nav_container {
+        margin: 0 1.5rem;
+    }
+
+    .nav__list {
+        position: absolute;
+        flex-direction: column;
+        right: -100%;
+        top: 130px;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        gap: 0;
+        padding: 2rem 0;
+    }
+
+    .nav__list::before {
+        position: absolute;
+        content: '';
+        top: -30px;
+        right: 0;
+        border: 30px solid var(--white);
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-left: 30px solid transparent;
+    }
+
+    .nav__list.active {
+        width: 90%;
+        right: 5%;
+        padding: 2rem 0;
+        gap: 0;
+        font-weight: bold;
+        background-color: var(--white);
+    }
+
+    .nav__list-item {
+        margin: 1.5rem auto;
+    }
+
+    .nav__link {
+        color: var(--dark_blue);
+        margin: 0;
+    }
+
+    .contact {
+        background-color: var(--yellow);
     }
 
     .main__container {
@@ -378,6 +451,10 @@ header {
     .second__section {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .section-btn::after {
+        left: calc(50% - 65px);
     }
     
     .third_description {
