@@ -366,6 +366,24 @@ header {
     fill: var(--white);
 }
 
+.arrow {
+    animation: movingArrow 3s infinite;
+}
+
+@keyframes movingArrow {
+    0% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-35px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
 
 @media screen and (max-width: 750px){
     .menu {
