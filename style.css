@@ -441,6 +441,7 @@ header {
         gap: 0;
         font-weight: bold;
         background-color: var(--white);
+        z-index: 999;
     }
 
     .nav__list-item {
