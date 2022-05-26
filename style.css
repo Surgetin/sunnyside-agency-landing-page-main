@@ -85,15 +85,15 @@ header {
 
 .nav__link {
     box-shadow: inset 0 0 0 0 var(--white);
-    color: white;
+    color: var(--white);
     font-weight: 400;
     padding: .45rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .nav__link:hover {
-    color: var(--cyan);
-    box-shadow: inset 200px 0 0 0 var(--white);    
+    color: var(--very_dark_blue);
+    box-shadow: inset 200px 0 0 0 var(--white);  
 }
 
 .logo__link img {
